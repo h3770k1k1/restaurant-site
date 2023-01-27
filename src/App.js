@@ -1,9 +1,8 @@
 import { React } from "react";
 import "./App.scss";
-import "./footer.css";
-import { Navbar } from "./navbar";
-import { Footer } from "./footer";
-import mainPhoto from "./main-photo.png";
+import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
+import mainPhoto from "./resources/main-photo.png";
 
 function App() {
 	return (
@@ -24,5 +23,4 @@ function App() {
 		</div>
 	);
 }
-
 export default App;
