@@ -1,0 +1,25 @@
+@import "https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap";
+.footer{
+    background-color: black;
+    width: 100%;
+    height: fit-content;
+    bottom: 0;
+    align-self: flex-end;
+    display: grid;
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+grid-column-gap: 9%;
+font-family: 'Inter Tight', sans-serif;
+font-weight: 300;
+}
+.footer-logo-container{
+    border: 1px solid blue;
+}
+.sm-container{
+    border: 1px solid blue;
+}
+
+.info-column p{
+    font-size: small;
+}
