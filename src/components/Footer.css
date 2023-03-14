@@ -80,3 +80,6 @@ color: black;
 
 }
 
+.non-visible{
+    display: none;
+}

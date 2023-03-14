@@ -15,7 +15,14 @@ export const Navbar = () => {
 			<div className="nav-button login-button">SIGN IN</div>
 			<div className="language-change-button">
 				<div className="nav-button language-name">EN</div>
-				<div className="rolldown-arrow">^</div>
+				<div className="dropdown-button">
+					^
+					<div class="dropdown-content">
+						<a href="#">Link 1</a>
+						<a href="#">Link 2</a>
+						<a href="#">Link 3</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

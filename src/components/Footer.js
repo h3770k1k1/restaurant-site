@@ -45,7 +45,7 @@ export const Footer = () => {
 			</div>
 			<div
 				className="scroll-to-top-button non-visible"
-				onclick="window.scroll(0,0);"
+				onClick="window.scroll(0,0);"
 			>
 				<a href="#top">
 					<img className="up-arrow-icon" src={UpArrowIcon} />
@@ -81,5 +81,7 @@ function detectScrollUp() {
 }
 
 function toggleButtonVisibility(button) {
-	
+	button.addEventListener("click", function () {
+		button.classList.add();
+	});
 }
