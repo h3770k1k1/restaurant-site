@@ -43,10 +43,7 @@ export const Footer = () => {
 				<p>PRIVACY POLICY</p>
 				<p>ORDER REGULATIONS</p>
 			</div>
-			<div
-				className="scroll-to-top-button non-visible"
-				onClick="window.scroll(0,0);"
-			>
+			<div className="scroll-to-top-button " onClick="window.scroll(0,0);">
 				<a href="#top">
 					<img className="up-arrow-icon" src={UpArrowIcon} />
 				</a>
