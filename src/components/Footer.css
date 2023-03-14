@@ -14,10 +14,10 @@ font-family: 'Inter Tight', sans-serif;
 font-weight: 300;
 }
 .footer-logo-container{
-    border: 1px solid blue;
+    display: flex;
+    height: 50%;
 }
 .sm-container{
-    border: 1px solid blue;
 }
 
 .info-column p{
@@ -30,7 +30,6 @@ font-weight: 300;
 font-size: 16px;
 }
 .footer-logo-img{
-    width: 140%;
     
 }
 .sm-container{
@@ -38,3 +37,46 @@ font-size: 16px;
     flex-direction: column;
     align-items: center;
 }
+.sm-container p{
+    font-size: medium;
+}
+
+.logo-column{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+}
+.sm-icons-container{
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+}
+.sm-icons-container *{
+    width: 30px;
+    height: 60px;
+}
+
+.sm-container p{
+    margin-bottom: 0;
+}
+.sm-icons-container *{
+    cursor: pointer;
+}
+.scroll-to-top-button{
+    background-color: white ;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    position: fixed;
+    margin-left: -90vw;
+    margin-top: 3vh;
+}
+.scroll-to-top-button a{
+text-decoration: none;
+color: black;
+
+}
+

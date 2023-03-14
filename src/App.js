@@ -19,6 +19,7 @@ function App() {
 				</div>
 			</div>
 			<img className="main-photo-img" src={mainPhoto} />
+
 			<Footer />
 		</div>
 	);

@@ -1,15 +1,18 @@
 import { React } from "react";
-import mainLogo from "../resources/logo.png";
+import footerLogo from "../resources/footer-logo.png";
 import "./Footer.css";
 import InstagramLogo from "../resources/instagram.svg";
 import FacebookLogo from "../resources/facebook.svg";
+import UpArrowIcon from "../resources/up-arrow.svg";
 
 export const Footer = () => {
+	detectScrollUp();
+	detectScrollDown();
 	return (
 		<div className="footer">
-			<div className="info-column">
+			<div className="info-column logo-column">
 				<div className="footer-logo-container">
-					<img className="footer-logo-img" src={mainLogo} />
+					<img className="footer-logo-img" src={footerLogo} />
 				</div>
 				<div className="sm-container">
 					<p>Visit our profile</p>
@@ -26,7 +29,7 @@ export const Footer = () => {
 					12-345 Warszawa,<br></br> ul. Waszyngtona
 				</p>
 				<p>17-853-87-97</p>
-				<p>kontakt@darakebab.pl</p>
+				<p>amagdarass@gmail.com</p>
 			</div>
 			<div className="info-column">
 				<h3>About us</h3>
@@ -35,11 +38,48 @@ export const Footer = () => {
 				<p>DELIVERY AREA</p>
 			</div>
 			<div className="info-column">
-				<h3>Informaion</h3>
+				<h3>Information</h3>
 				<p>HOW TO ORDER</p>
 				<p>PRIVACY POLICY</p>
 				<p>ORDER REGULATIONS</p>
 			</div>
+			<div
+				className="scroll-to-top-button non-visible"
+				onclick="window.scroll(0,0);"
+			>
+				<a href="#top">
+					<img className="up-arrow-icon" src={UpArrowIcon} />
+				</a>
+			</div>
 		</div>
 	);
 };
+
+function detectScrollDown() {
+	let prevScrollTop = 0;
+	window.addEventListener("scroll", () => {
+		const currentScrollTop =
+			window.pageYOffset || document.documentElement.scrollTop;
+		if (currentScrollTop > prevScrollTop) {
+			console.log("down");
+		}
+		prevScrollTop = currentScrollTop;
+	});
+}
+
+function detectScrollUp() {
+	let prevScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+	window.addEventListener("scroll", () => {
+		const currentScrollTop =
+			window.pageYOffset || document.documentElement.scrollTop;
+		if (prevScrollTop > currentScrollTop) {
+			console.log("up");
+		}
+		prevScrollTop = currentScrollTop;
+	});
+}
+
+function toggleButtonVisibility(button) {
+	
+}

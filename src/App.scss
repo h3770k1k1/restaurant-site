@@ -4,6 +4,10 @@ $font-family_1: 'Inter Tight', sans-serif;
 $background-color_1: rgb(255, 255, 255);
 $background-color_2: black;
 
+
+html {
+	scroll-behavior: smooth;
+  }
 @import "https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap";
 body {
 	background-color: $background-color_1;
@@ -11,6 +15,7 @@ body {
 	margin: 0;
 	font-family: $font-family_1;
 	font-weight: 300;
+	overscroll-behavior: none;
 }
 
 .MainContainer {
@@ -40,10 +45,11 @@ body {
 .nav-button {
 	color: $color_1;
 	cursor: pointer;
+	font-size: medium;
 }
 .login-button {
 	cursor: pointer;
-	margin-left: 60%;
+	margin-left: 55%;
 }
 .nav-buttons-container {
 	margin-left: 2%;
@@ -119,4 +125,11 @@ body {
 		backdrop-filter: none;
 		border: 1px solid white;
 	}
+}
+.language-change-button{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 3%;
+	margin-left: 2em;
 }
