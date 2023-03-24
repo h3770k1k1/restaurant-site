@@ -8,6 +8,7 @@ import UpArrowIcon from "../resources/up-arrow.svg";
 export const Footer = () => {
 	detectScrollUp();
 	detectScrollDown();
+
 	return (
 		<div className="footer">
 			<div className="info-column logo-column">
@@ -43,9 +44,12 @@ export const Footer = () => {
 				<p>PRIVACY POLICY</p>
 				<p>ORDER REGULATIONS</p>
 			</div>
-			<div className="scroll-to-top-button " onClick="window.scroll(0,0);">
+			<div
+				className="scroll-to-top-button non-visible"
+				onClick="window.scroll(0,0);"
+			>
 				<a href="#top">
-					<img className="up-arrow-icon" src={UpArrowIcon} />
+					<img className="up-arrow-icon " src={UpArrowIcon} />
 				</a>
 			</div>
 		</div>
@@ -59,6 +63,8 @@ function detectScrollDown() {
 			window.pageYOffset || document.documentElement.scrollTop;
 		if (currentScrollTop > prevScrollTop) {
 			console.log("down");
+
+			showButton();
 		}
 		prevScrollTop = currentScrollTop;
 	});
@@ -66,19 +72,29 @@ function detectScrollDown() {
 
 function detectScrollUp() {
 	let prevScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
 	window.addEventListener("scroll", () => {
 		const currentScrollTop =
 			window.pageYOffset || document.documentElement.scrollTop;
 		if (prevScrollTop > currentScrollTop) {
 			console.log("up");
+			hideButton();
 		}
 		prevScrollTop = currentScrollTop;
 	});
 }
 
-function toggleButtonVisibility(button) {
-	button.addEventListener("click", function () {
-		button.classList.add();
-	});
+function showButton() {
+	const scrollToTopButton = document.getElementsByClassName(
+		"scroll-to-top-button"
+	)[0];
+	scrollToTopButton.classList.remove("non-visible");
+	console.log("gonwo");
+}
+
+function hideButton() {
+	const scrollToTopButton = document.getElementsByClassName(
+		"scroll-to-top-button"
+	)[0];
+	scrollToTopButton.classList.add("non-visible");
+	console.log("papaja");
 }
