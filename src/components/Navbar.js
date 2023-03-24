@@ -1,5 +1,6 @@
 import { React } from "react";
 import mainLogo from "../resources/logo.png";
+import dropDownArrow from "../resources/drop-down-arrow.svg";
 
 export const Navbar = () => {
 	return (
@@ -16,11 +17,17 @@ export const Navbar = () => {
 			<div className="language-change-button">
 				<div className="nav-button language-name">EN</div>
 				<div className="dropdown-button">
-					^
-					<div class="dropdown-content">
-						<a href="#">Link 1</a>
-						<a href="#">Link 2</a>
-						<a href="#">Link 3</a>
+					<img className="dropdown-arrow-img" src={dropDownArrow} />
+					<div className="dropdown-content">
+						<a className="choosen-language" href="#">
+							English
+						</a>
+						<a className="language-option" href="#">
+							Polski
+						</a>
+						<a className="language-option" href="#">
+							Deutsch
+						</a>
 					</div>
 				</div>
 			</div>
