@@ -1,8 +1,18 @@
 import { React } from "react";
 import mainLogo from "../resources/logo.png";
 import dropDownArrow from "../resources/drop-down-arrow.svg";
+import { Link } from "react-router-dom";
+import { Suspense } from "react";
+import { useState } from "react";
+import "../App.scss";
+import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
+	const { t, i18n } = useTranslation();
+
+	const handleChangeLanguage = (e) => {
+		i18n.changeLanguage(e.target.value);
+	};
 	return (
 		<div className="Navbar">
 			<div className="logo-container">
@@ -18,19 +28,20 @@ export const Navbar = () => {
 				<div className="nav-button language-name">EN</div>
 				<div className="dropdown-button">
 					<img className="dropdown-arrow-img" src={dropDownArrow} />
-					<div className="dropdown-content">
-						<a className="choosen-language" href="#">
+					<select className="dropdown-content" onChange={handleChangeLanguage}>
+						<option value="en" className="choosen-language">
 							English
-						</a>
+						</option>
 						<a className="language-option" href="#">
 							Polski
 						</a>
-						<a className="language-option" href="#">
+						<option className="language-option" value="de">
 							Deutsch
-						</a>
-					</div>
+						</option>
+					</select>
 				</div>
 			</div>
 		</div>
 	);
 };
+export default Navbar;
