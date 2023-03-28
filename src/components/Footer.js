@@ -49,7 +49,7 @@ export const Footer = () => {
 				onClick="window.scroll(0,0);"
 			>
 				<a href="#top">
-					<img className="up-arrow-icon " src={UpArrowIcon} />
+					<img className="up-arrow-icon" src={UpArrowIcon} />
 				</a>
 			</div>
 		</div>
