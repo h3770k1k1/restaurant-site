@@ -35,25 +35,25 @@ function App() {
 	};
 
 	return (
-		<Suspense fallback="Loading...">
-			<div className="MainContainer">
-				<Navbar />
+		<div className="MainContainer">
+			<Navbar />
 
-				<div className="interactions-container">
-					<div className="text-container">
-						<div className="title">KEBUG KEBAB</div>
+			<div className="interactions-container">
+				<div className="text-container">
+					<div className="title">KEBUG KEBAB</div>
+					<Suspense fallback="Loading...">
 						<div className="greeting">{t("welcome")}</div>
-					</div>
-					<div className="order-buttons-container">
-						<div className="order-button">ORDER ON-LINE</div>
-						<div className="order-button">CALL AND ORDER</div>
-					</div>
+					</Suspense>
 				</div>
-				<img className="main-photo-img" src={mainPhoto} />
-
-				<Footer />
+				<div className="order-buttons-container">
+					<div className="order-button">ORDER ON-LINE</div>
+					<div className="order-button">CALL AND ORDER</div>
+				</div>
 			</div>
-		</Suspense>
+			<img className="main-photo-img" src={mainPhoto} />
+
+			<Footer />
+		</div>
 	);
 }
 export default App;
