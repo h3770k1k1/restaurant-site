@@ -10,20 +10,17 @@ import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
 const translationEn = { welcome: "Welcome to our restaurant!" };
-const translationDe = { welcome: "xd" };
+const translationDe = { welcome: "Willkommen in unserem Restaurant!" };
 
-i18n
-	.use(initReactI18next)
-
-	.init({
-		resources: {
-			en: { translation: translationEn },
-			de: { translation: translationDe },
-		},
-		lng: "en",
-		fallbackLng: "en",
-		interpolation: { escapeValue: false },
-	});
+i18n.init({
+	resources: {
+		en: { translation: translationEn },
+		de: { translation: translationDe },
+	},
+	lng: "en",
+	fallbackLng: "en",
+	interpolation: { escapeValue: false },
+});
 
 function App() {
 	const { t } = useTranslation();
