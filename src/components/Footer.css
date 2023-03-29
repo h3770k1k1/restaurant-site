@@ -62,19 +62,19 @@ font-size: 16px;
 .sm-icons-container *{
     cursor: pointer;
 }
-.scroll-to-top-button{
+.bottom-button{
     background-color: white ;
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 3px;
     position: fixed;
-    margin-left: -90vw;
-    margin-top: -1vh;
+    margin-left: -94vw;
+    margin-top: -4vh;
 }
-.scroll-to-top-button a{
+.scroll-up-button a{
 text-decoration: none;
 color: black;
 
@@ -82,4 +82,11 @@ color: black;
 
 .non-visible{
     display: none;
+}
+
+.shopping-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 94vw;
 }

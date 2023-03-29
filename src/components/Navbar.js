@@ -25,21 +25,18 @@ export const Navbar = () => {
 			</div>
 			<div className="nav-button login-button">SIGN IN</div>
 			<div className="language-change-button">
-				<div className="nav-button language-name">EN</div>
-				<div className="dropdown-button">
+				<select className="dropdown-button" onChange={handleChangeLanguage}>
 					<img className="dropdown-arrow-img" src={dropDownArrow} />
-					<select className="dropdown-content" onChange={handleChangeLanguage}>
-						<option value="en" className="choosen-language">
-							English
-						</option>
-						<a className="language-option" href="#">
-							Polski
-						</a>
-						<option className="language-option" value="de">
-							Deutsch
-						</option>
-					</select>
-				</div>
+					<option value="en" className="language-option choosen-language">
+						English
+					</option>
+					<option className="language-option" href="#">
+						Polski
+					</option>
+					<option className="language-option" value="de">
+						Deutsch
+					</option>
+				</select>
 			</div>
 		</div>
 	);

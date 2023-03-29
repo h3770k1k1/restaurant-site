@@ -4,6 +4,7 @@ import "./Footer.css";
 import InstagramLogo from "../resources/instagram.svg";
 import FacebookLogo from "../resources/facebook.svg";
 import UpArrowIcon from "../resources/up-arrow.svg";
+import ShoppingCart from "../resources/shopping-cart.svg";
 
 export const Footer = () => {
 	detectScrollUp();
@@ -44,8 +45,11 @@ export const Footer = () => {
 				<p>PRIVACY POLICY</p>
 				<p>ORDER REGULATIONS</p>
 			</div>
+			<div className="bottom-button shopping-button">
+				<img src={ShoppingCart} />
+			</div>
 			<div
-				className="scroll-to-top-button non-visible"
+				className="bottom-button scroll-to-top-button  non-visible"
 				onClick="window.scroll(0,0);"
 			>
 				<a href="#top">
@@ -88,7 +92,7 @@ function showButton() {
 		"scroll-to-top-button"
 	)[0];
 	scrollToTopButton.classList.remove("non-visible");
-	console.log("gonwo");
+	console.log("widać!");
 }
 
 function hideButton() {
