@@ -20,13 +20,13 @@ export const Navbar = () => {
 				<img className="logo-img" src={mainLogo} />
 			</div>
 			<div className="nav-buttons-container">
-				<div className="nav-button">MENU</div>
-				<div className="nav-button">GALLERY</div>
+				<div className="nav-button">{t("menu")}</div>
+				<div className="nav-button">{t("gallery")}</div>
 				<NavLink to="/contact" className="nav-button">
-					CONTACT
+					{t("contact")}
 				</NavLink>
 			</div>
-			<div className="nav-button login-button">SIGN IN</div>
+			<div className="nav-button login-button">{t("signIn")}</div>
 			<div className="language-change-button">
 				<select className="dropdown-button" onChange={handleChangeLanguage}>
 					<img className="dropdown-arrow-img" src={dropDownArrow} />
