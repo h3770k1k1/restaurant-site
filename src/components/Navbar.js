@@ -29,7 +29,6 @@ export const Navbar = () => {
 			<div className="nav-button login-button">{t("signIn")}</div>
 			<div className="language-change-button">
 				<select className="dropdown-button" onChange={handleChangeLanguage}>
-					<img className="dropdown-arrow-img" src={dropDownArrow} />
 					<option value="en" className="language-option choosen-language">
 						English
 					</option>

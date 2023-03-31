@@ -4,8 +4,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar";
 import "./App.scss";
 import { Footer } from "./components/Footer";
-import mainPhoto from "./resources/main-photo.png";
-import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+import mainPhoto from "./resources/main-photo.jpeg";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
@@ -47,14 +46,33 @@ const translationDe = {
 	privacyPolicyParagraph: "DATENSCHUTZERKLÄRUNG",
 	orderRegulationsParagraph: "BESTELLVORSCHRIFTEN",
 };
-
+const translationPl = {
+	welcome: "Witamy w naszej restauracji!",
+	orderOnline: "ZAMÓW ONLINE",
+	callAndOrder: "ZADZWOŃ I ZAMÓW",
+	contact: "KONTAKT",
+	menu: "MENU",
+	gallery: "GALERIA",
+	signIn: "ZALOGUJ SIĘ",
+	visitProfile: "Odwiedź nasz profil",
+	contactHeading: "Kontakt",
+	aboutHeading: "O nas",
+	ourCompanyParagraph: "NASZA FIRMA",
+	menuParagraph: "MENU",
+	deliveryAreaParagraph: "OBSZAR DOSTAWY",
+	informationHeading: "Informacje",
+	howToOrderParagraph: "JAK ZAMAWIAĆ",
+	privacyPolicyParagraph: "POLITYKA I PRYWATNOŚĆ",
+	orderRegulationsParagraph: "REGULAMIN ZAMÓWIEŃ",
+};
 i18n.init({
 	resources: {
 		en: { translation: translationEn },
 		de: { translation: translationDe },
+		pl: { translation: translationPl },
 	},
 	lng: "en",
-	fallbackLng: "en",
+	fallbackLng: "pl",
 	interpolation: { escapeValue: false },
 });
 
