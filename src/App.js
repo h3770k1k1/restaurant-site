@@ -72,7 +72,7 @@ i18n.init({
 		pl: { translation: translationPl },
 	},
 	lng: "en",
-	fallbackLng: "pl",
+	fallbackLng: "en",
 	interpolation: { escapeValue: false },
 });
 

@@ -1,23 +1,25 @@
-import { React } from "react";
+import React, { useState } from "react";
 import mainLogo from "../resources/logo.png";
 import dropDownArrow from "../resources/drop-down-arrow.svg";
-import { Suspense } from "react";
-import { useState } from "react";
-import "../App.scss";
 import { useTranslation } from "react-i18next";
-import { Link, Route, NavLink } from "react-router-dom";
-import Contact from "./Contact";
+import { NavLink } from "react-router-dom";
 
-export const Navbar = () => {
+const Navbar = () => {
 	const { t, i18n } = useTranslation();
+	const [isRotated, setIsRotated] = useState(false);
 
 	const handleChangeLanguage = (e) => {
 		i18n.changeLanguage(e.target.value);
 	};
+
+	const handleArrowClick = () => {
+		setIsRotated(!isRotated);
+	};
+
 	return (
 		<div className="Navbar">
 			<div className="logo-container">
-				<img className="logo-img" src={mainLogo} />
+				<img className="logo-img" src={mainLogo} alt="logo" />
 			</div>
 			<div className="nav-buttons-container">
 				<div className="nav-button">{t("menu")}</div>
@@ -28,19 +30,34 @@ export const Navbar = () => {
 			</div>
 			<div className="nav-button login-button">{t("signIn")}</div>
 			<div className="language-change-button">
-				<select className="dropdown-button" onChange={handleChangeLanguage}>
-					<option value="en" className="language-option choosen-language">
+				<select
+					className="dropdown-button"
+					onChange={handleChangeLanguage}
+					onClick={handleArrowClick}
+					style={{ paddingRight: "20px" }}
+				>
+					<option
+						selected="selected"
+						value="en"
+						className="language-option choosen-language"
+					>
 						English
 					</option>
-					<option className="language-option" href="#">
+					<option className="language-option" value="pl">
 						Polski
 					</option>
 					<option className="language-option" value="de">
 						Deutsch
 					</option>
 				</select>
+				<div className="dropdown-arrow">
+					<span style={{ transform: isRotated ? "rotate(180deg)" : "none" }}>
+						v
+					</span>
+				</div>
 			</div>
 		</div>
 	);
 };
+
 export default Navbar;
