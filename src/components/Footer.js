@@ -5,10 +5,13 @@ import InstagramLogo from "../resources/instagram.svg";
 import FacebookLogo from "../resources/facebook.svg";
 import UpArrowIcon from "../resources/up-arrow.svg";
 import ShoppingCart from "../resources/shopping-cart.svg";
+import i18n from "i18next";
+import { initReactI18next, useTranslation } from "react-i18next";
 
 export const Footer = () => {
 	detectScrollUp();
 	detectScrollDown();
+	const { t, i18n } = useTranslation();
 
 	return (
 		<div className="footer">
@@ -17,7 +20,7 @@ export const Footer = () => {
 					<img className="footer-logo-img" src={footerLogo} />
 				</div>
 				<div className="sm-container">
-					<p>Visit our profile</p>
+					<p>{t("visitProfile")}</p>
 					<div className="sm-icons-container">
 						<img src={InstagramLogo}></img>
 						<img src={FacebookLogo}></img>
@@ -25,7 +28,7 @@ export const Footer = () => {
 				</div>
 			</div>
 			<div className="info-column">
-				<h3>Contact</h3>
+				<h3>{t("contactHeading")}</h3>
 				<p>KEBUG KEBAB</p>
 				<p>
 					12-345 Warszawa,<br></br> ul. Waszyngtona
@@ -34,16 +37,16 @@ export const Footer = () => {
 				<p>amagdarass@gmail.com</p>
 			</div>
 			<div className="info-column">
-				<h3>About us</h3>
-				<p>OUR COMPANY</p>
-				<p>MENU</p>
-				<p>DELIVERY AREA</p>
+				<h3>{t("aboutHeading")}</h3>
+				<p>{t("ourCompanyParagraph")}</p>
+				<p>{t("menuParagraph")}</p>
+				<p>{t("deliveryAreaParagraph")}</p>
 			</div>
 			<div className="info-column">
-				<h3>Information</h3>
-				<p>HOW TO ORDER</p>
-				<p>PRIVACY POLICY</p>
-				<p>ORDER REGULATIONS</p>
+				<h3>{t("informationHeading")}</h3>
+				<p>{t("howToOrderParagraph")}</p>
+				<p>{t("privacyPolicyParagraph")}</p>
+				<p>{t("orderRegulationsParagraph")}</p>
 			</div>
 			<div className="bottom-button shopping-button">
 				<img src={ShoppingCart} />

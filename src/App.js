@@ -9,8 +9,44 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
-const translationEn = { welcome: "Welcome to our restaurant!" };
-const translationDe = { welcome: "Willkommen in unserem Restaurant!" };
+const translationEn = {
+	welcome: "Welcome to our restaurant!",
+	orderOnline: "ORDER ON-LINE",
+	callAndOrder: "CALL AND ORDER",
+	contact: "CONTACT",
+	menu: "MENU",
+	gallery: "GALLERY",
+	signIn: "SIGN IN",
+	visitProfile: "Visit our profile",
+	contactHeading: "Contact",
+	aboutHeading: "About us",
+	ourCompanyParagraph: "OUR COMPANY",
+	menuParagraph: "MENU",
+	deliveryAreaParagraph: "DELIVERY AREA",
+	informationHeading: "Information",
+	howToOrderParagraph: "HOW TO ORDER",
+	privacyPolicyParagraph: "PRIVACY POLICY",
+	orderRegulationsParagraph: "ORDER REGULATIONS",
+};
+const translationDe = {
+	welcome: "Willkommen in unserem Restaurant!",
+	orderOnline: "ONLINE BESTELLEN",
+	callAndOrder: "ANRUFEN UND BESTELLEN",
+	contact: "KONTAKT",
+	menu: "MENU",
+	gallery: "GALLERY",
+	signIn: "EINLOGGEN",
+	visitProfile: "Besuchen Sie unser Profil",
+	contactHeading: "KONTAKT",
+	aboutHeading: "ÜBER UNS",
+	ourCompanyParagraph: "UNSER UNTERNEHMEN",
+	menuParagraph: "MENU",
+	deliveryAreaParagraph: "LIEFERGEBIET",
+	informationHeading: "Information",
+	howToOrderParagraph: "WIE BESTELLE ICH",
+	privacyPolicyParagraph: "DATENSCHUTZERKLÄRUNG",
+	orderRegulationsParagraph: "BESTELLVORSCHRIFTEN",
+};
 
 i18n.init({
 	resources: {
@@ -43,8 +79,8 @@ function App() {
 					</Suspense>
 				</div>
 				<div className="order-buttons-container">
-					<div className="order-button">ORDER ON-LINE</div>
-					<div className="order-button">CALL AND ORDER</div>
+					<div className="order-button">{t("orderOnline")}</div>
+					<div className="order-button">{t("callAndOrder")}</div>
 				</div>
 			</div>
 			<img className="main-photo-img" src={mainPhoto} />
