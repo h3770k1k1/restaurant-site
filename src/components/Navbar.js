@@ -34,7 +34,6 @@ const Navbar = () => {
 					className="dropdown-button"
 					onChange={handleChangeLanguage}
 					onClick={handleArrowClick}
-					style={{ paddingRight: "20px" }}
 				>
 					<option
 						selected="selected"
@@ -51,8 +50,15 @@ const Navbar = () => {
 					</option>
 				</select>
 				<div className="dropdown-arrow">
-					<span style={{ transform: isRotated ? "rotate(180deg)" : "none" }}>
-						v
+					<span
+						style={{
+							webkitTransform: isRotated
+								? "rotate(-180deg) translateZ(0)"
+								: "none",
+							transition: "0.4s ease",
+						}}
+					>
+						<img src={dropDownArrow}></img>
 					</span>
 				</div>
 			</div>
