@@ -7,23 +7,6 @@ import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import { I18nextProvider } from "react-i18next";
 
-i18n.use(initReactI18next).init({
-	lng: "en",
-	fallbackLng: "en",
-	resources: {
-		en: {
-			translation: {
-				welcome: "Welcome to our restaurant!",
-			},
-		},
-		de: {
-			translation: {
-				welcome: "Willkommen in unserem Restaurant!",
-			},
-		},
-	},
-});
-
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>

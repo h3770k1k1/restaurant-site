@@ -31,6 +31,9 @@ const Navbar = () => {
 			<div className="nav-button login-button">{t("signIn")}</div>
 			<div className="language-change-button">
 				<select
+					onfocus="this.size = 3;"
+					onblur="this.size=0;"
+					onchange="this.size=1;this.blur()"
 					className="dropdown-button"
 					onChange={handleChangeLanguage}
 					onClick={handleArrowClick}

@@ -124,30 +124,23 @@ body {
 		background: rgb(255, 255, 255);
 		cursor: pointer;
 		backdrop-filter: none;
-		border: 1px solid white;
 	}
 }
 
 	
 	.language-option {
-	  color: #6a6a6a;
 	  padding: 10px;
 	  font-size: 16px;
 	  border: none;
 	  outline: none;
 	  cursor: pointer;
-	  transition: background-color 0.3s;
 	  width: 100%;
-	  
 	   
 	  &:hover {
-		background-color: #333;
 		color: #fff;
-		
 		outline: none;
 	  
 	  &.choosen-language {
-		background-color: #333;
 		color: #fff;
 	  }
 	}
@@ -175,6 +168,7 @@ body {
 		  border: 0;
 		}
 	  }
+
 	  & > option.choosen-language {
 		font-weight: bold;
 	  }
@@ -183,9 +177,7 @@ body {
 	  }
 	  &:focus {
 		color: #fff;
-		& > option {
-		  background-color: #ffffff00;
-		}
+		
 	  }
 	}
   }
@@ -197,5 +189,15 @@ body {
 	width: 2em;
 	height: 2em;
 	z-index: 5;
-	margin-left: -1.5em;
+	margin-left: -1em;
   }
+
+ select{
+border: none;
+appearance: none;
+
+ }
+
+ option{
+	
+ }
