@@ -69,8 +69,6 @@ function detectScrollDown() {
 		const currentScrollTop =
 			window.pageYOffset || document.documentElement.scrollTop;
 		if (currentScrollTop > prevScrollTop) {
-			console.log("down");
-
 			showButton();
 		}
 		prevScrollTop = currentScrollTop;
@@ -83,7 +81,6 @@ function detectScrollUp() {
 		const currentScrollTop =
 			window.pageYOffset || document.documentElement.scrollTop;
 		if (prevScrollTop > currentScrollTop) {
-			console.log("up");
 			hideButton();
 		}
 		prevScrollTop = currentScrollTop;
@@ -95,7 +92,6 @@ function showButton() {
 		"scroll-to-top-button"
 	)[0];
 	scrollToTopButton.classList.remove("non-visible");
-	console.log("widać!");
 }
 
 function hideButton() {
@@ -103,5 +99,4 @@ function hideButton() {
 		"scroll-to-top-button"
 	)[0];
 	scrollToTopButton.classList.add("non-visible");
-	console.log("papaja");
 }
