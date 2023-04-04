@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from "react";
 import "./App.scss";
 import Navbar from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import mainPhoto from "./resources/main-photo.jpeg";
 
 import i18n from "i18next";

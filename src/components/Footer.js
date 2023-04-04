@@ -8,7 +8,7 @@ import ShoppingCart from "../resources/shopping-cart.svg";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 
-export const Footer = () => {
+const Footer = () => {
 	detectScrollUp();
 	detectScrollDown();
 	const { t, i18n } = useTranslation();
@@ -100,3 +100,4 @@ function hideButton() {
 	)[0];
 	scrollToTopButton.classList.add("non-visible");
 }
+export default Footer;

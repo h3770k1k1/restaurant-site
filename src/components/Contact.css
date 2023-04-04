@@ -1,7 +1,12 @@
+.main-container{
+width: 100vw;
+height: 150vh;
+}
+
 .contact-data-container{
     background-color: blueviolet;
-    width: 100vw;
-    height: 150vh;
+    width: 100%;
+    height: 100%;
 
 }
 
@@ -9,8 +14,16 @@
 width: 100%;
 height: calc(100% / 3);
 background-color: cornflowerblue;
-}
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
 
+}
+.contact-info .description-text{
+width: 60%;
+}
 .map-block{
 width: 100%;
 height: calc(100%/1.5);
@@ -42,6 +55,10 @@ grid-row-gap: 5%;
 
 .text-block{
 background-color: lightpink;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
 
 .message-box{
@@ -77,3 +94,26 @@ grid-column-gap: 4%;
 .e-mail{
     background-color: rgb(75, 30, 210);
 }
+
+.heading{
+    font-size: 36px;
+    font-weight: 700;
+    color: black;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;}
+
+
+
+.description-text{
+    color: black;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
