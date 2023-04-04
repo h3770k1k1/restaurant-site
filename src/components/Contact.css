@@ -1,24 +1,30 @@
 .main-container{
 width: 100vw;
 height: 150vh;
+padding: 0;
+margin: 0;
 }
 
 .contact-data-container{
     background-color: blueviolet;
     width: 100%;
     height: 100%;
+    
 
 }
 
 .contact-info{
+    padding-top: 10vh;
 width: 100%;
 height: calc(100% / 3);
+
 background-color: cornflowerblue;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 text-align: center;
+
 
 }
 .contact-info .description-text{
