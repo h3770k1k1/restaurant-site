@@ -16,9 +16,9 @@ margin: 0;
 .contact-info{
     padding-top: 10vh;
 width: 100%;
-height: calc(100% / 3);
+height: calc(100% / 6);
 
-background-color: cornflowerblue;
+background-color: rgb(255, 255, 255);
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -40,17 +40,22 @@ grid-template-rows: 1fr;
 }
 
 .e-mail-container{
-background-color: bisque;
+background-color: rgb(255, 255, 255);
 display: flex;
 justify-content: center;
 align-items: center;
 }
+
+.e-mail-container *{
+    border-radius: 5px;
+}
+
 .map-container{
 background-color: darkolivegreen;
 }
 
 .contact-form{
-    background-color: darkblue;
+    background-color: rgb(255, 255, 255);
     height: 70%;
     width: 85%;
     display: grid;
@@ -60,7 +65,7 @@ grid-row-gap: 5%;
 }
 
 .text-block{
-background-color: lightpink;
+background-color: rgb(255, 255, 255);
 display: flex;
 justify-content: center;
 align-items: center;
@@ -73,17 +78,16 @@ display: flex;
 justify-content: flex-start;
 align-items: flex-start;
 }
-
 .signature{
-background-color: hotpink;
+background-color: rgb(255, 255, 255);
 display: grid;
 grid-template-columns: 1fr;
 grid-template-rows: repeat(2, 1fr);
-grid-row-gap: 25%;
+grid-row-gap: 12%;
 }
 
 .personal-details{
-    background-color: cornflowerblue;
+    background-color: rgb(255, 255, 255);
     display: grid;
 grid-template-columns: repeat(2, 1fr);
 grid-template-rows: 1fr;
@@ -91,15 +95,15 @@ grid-column-gap: 4%;
 
 }
 .submit-button{
-    background-color: darkgoldenrod;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    letter-spacing: 0.2em;
 }
 
-.name{
-    background-color: khaki;
-}
-.e-mail{
-    background-color: rgb(75, 30, 210);
-}
 
 .heading{
     font-size: 36px;
@@ -123,3 +127,22 @@ grid-column-gap: 4%;
     line-height: 1.5;
 }
 
+.contact-ways{
+height: calc(100% / 6);
+width: 100%;
+background-color: fuchsia;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+}
+.contact-way{
+    border:1px solid blue
+}
+
+input{
+    border: 1px solid #ccc;
+    transition: border-color 0.3s ease-in-out;
+    }
+input:hover, input:focus {
+    border: 2px solid red;
+  }
