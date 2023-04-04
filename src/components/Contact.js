@@ -13,8 +13,14 @@ const Contact = () => {
 					<div className="e-mail-container">
 						<div className="contact-form">
 							<div className="text-block"></div>
-							<div className="message-box"></div>
-							<div className="signature"></div>
+							<input className="message-box" placeholder="Your Message"></input>
+							<div className="signature">
+								<div className="personal-details">
+									<div className="peronal-data name"></div>
+									<div className="peronal-data e-mail"></div>
+								</div>
+								<div className="submit-button"></div>
+							</div>
 						</div>
 					</div>
 					<div className="map-container"></div>
