@@ -2,7 +2,9 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "./Contact.css";
-
+import Letter from "../resources/letter.svg";
+import Phone from "../resources/phone.svg";
+import Place from "../resources/place.svg";
 const Contact = () => {
 	return (
 		<div className="main-container">
@@ -20,9 +22,36 @@ const Contact = () => {
 					</div>
 				</div>
 				<div className="contact-ways">
-					<div className="contact-way"></div>
-					<div className="contact-way"></div>
-					<div className="contact-way"></div>
+					<div className="contact-way">
+						<div className="contact-pic">
+							<img src={Place}></img>
+						</div>
+						<div className="contact-data">
+							<div className="contact-way-name">Office</div>
+							<div className="data">1AB, St. 3rd May, Warsaw, </div>
+							<div className="data">Poland</div>
+						</div>
+					</div>
+					<div className="contact-way">
+						<div className="contact-pic">
+							<img src={Phone}></img>
+						</div>
+						<div className="contact-data">
+							<div className="contact-way-name">Call Us</div>
+							<div className="data">(+48) 123 456 789</div>
+							<div className="data">(+12) 98 765 437</div>
+						</div>
+					</div>
+					<div className="contact-way">
+						<div className="contact-pic">
+							<img src={Letter}></img>
+						</div>
+						<div className="contact-data">
+							<div className="contact-way-name">Send Us</div>
+							<div className="data">mailmail@support.com</div>
+							<div className="data">mailmail@bussines.com</div>
+						</div>
+					</div>
 				</div>
 				<div className="map-block">
 					<div className="e-mail-container">
