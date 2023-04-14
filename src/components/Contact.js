@@ -1,24 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import "./Contact.css";
+import Map from "./map.jsx";
 import Letter from "../resources/letter.svg";
 import Phone from "../resources/phone.svg";
 import Place from "../resources/place.svg";
 import { useState, useEffect, useRef } from "react";
-import {
-	GoogleMapsProvider,
-	useGoogleMap,
-} from "@ubilabs/google-maps-react-hooks";
-
-const mapOptions = {
-	zoom: 12,
-	center: {
-		lat: 43.68,
-		lng: -79.43,
-	},
-};
-
 const Contact = () => {
 	const [mapContainer, setMapContainer] = useState(null);
 	return (
@@ -95,13 +82,7 @@ const Contact = () => {
 						</div>
 					</div>
 					<div className="map-container">
-						<GoogleMapsProvider
-							googleMapsAPIKey={process.env.NEXT_PUBLIC_MAP_API_KEY}
-							options={mapOptions}
-							mapContainer={mapContainer}
-						>
-							<div ref={(node) => setMapContainer(node)}></div>
-						</GoogleMapsProvider>
+						<Map />
 					</div>
 				</div>
 			</div>
