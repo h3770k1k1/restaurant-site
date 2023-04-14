@@ -65,15 +65,19 @@ const Contact = () => {
 									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 								</div>
 							</div>
-							<input className="message-box" placeholder="Your Message"></input>
-							<div className="signature">
+							<form>
+								<textarea className="message-box textbox">
+									Your Message...
+								</textarea>
+							</form>
+							<div className="signature ">
 								<div className="personal-details">
 									<input
-										className="peronal-data name"
+										className="peronal-data name textbox"
 										placeholder="Your Name"
 									></input>
 									<input
-										className="peronal-data e-mail"
+										className="peronal-data e-mail textbox"
 										placeholder="Your E-mail"
 									></input>
 								</div>
