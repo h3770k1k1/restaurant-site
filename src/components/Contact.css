@@ -1,6 +1,11 @@
+body {
+	padding: 0;
+	margin: 0;
+	font-weight: 300;
+	overscroll-behavior: none;
+}
+
 .main-container{
-width: 100vw;
-height: fit-content;
 padding: 0;
 margin: 0;
 }
