@@ -1,6 +1,6 @@
 .main-container{
 width: 100vw;
-height: 150vh;
+height: fit-content;
 padding: 0;
 margin: 0;
 }
@@ -28,6 +28,7 @@ text-align: center;
 }
 .contact-info .description-text{
 width: 60%;
+padding-bottom: 2%;
 }
 .map-block{
 width: 100%;
@@ -107,6 +108,8 @@ grid-column-gap: 4%;
 
 
 .heading{
+    margin-top: 0.5%;
+    margin-bottom: 0.5%;
     font-size: 36px;
     font-weight: 700;
     color: black;
@@ -135,6 +138,7 @@ width: 100%;
 display: grid;
 grid-template-columns: repeat(3, 1fr);
 grid-template-rows: 1fr;
+margin-bottom: 1%;
 }
 
 
@@ -176,3 +180,7 @@ align-items: center;
     margin-top: -2rem;
 }
 
+textarea{
+    font-size: 14px;
+    font-family: 'Inter Tight', sans-serif;
+}

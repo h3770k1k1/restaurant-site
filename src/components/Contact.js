@@ -5,6 +5,7 @@ import Map from "./map.jsx";
 import Letter from "../resources/letter.svg";
 import Phone from "../resources/phone.svg";
 import Place from "../resources/place.svg";
+import Footer from "../components/Footer";
 import { useState, useEffect, useRef } from "react";
 const Contact = () => {
 	const [mapContainer, setMapContainer] = useState(null);
@@ -66,9 +67,7 @@ const Contact = () => {
 								</div>
 							</div>
 							<form>
-								<textarea className="message-box textbox">
-									Your Message...
-								</textarea>
+								<textarea className="message-box textbox"></textarea>
 							</form>
 							<div className="signature ">
 								<div className="personal-details">
@@ -90,6 +89,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
+			<Footer />
 		</div>
 	);
 };
