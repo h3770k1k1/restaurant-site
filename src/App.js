@@ -3,7 +3,7 @@ import "./App.scss";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import mainPhoto from "./resources/main-photo.jpeg";
-
+import "./components/Footer.css";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
 import { translationEn, translationDe, translationPl } from "./translations";

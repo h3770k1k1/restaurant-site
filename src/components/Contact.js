@@ -5,7 +5,7 @@ import Map from "./map.jsx";
 import Letter from "../resources/letter.svg";
 import Phone from "../resources/phone.svg";
 import Place from "../resources/place.svg";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer.jsx";
 import { useState, useEffect, useRef } from "react";
 const Contact = () => {
 	const [mapContainer, setMapContainer] = useState(null);

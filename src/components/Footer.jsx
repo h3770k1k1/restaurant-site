@@ -1,6 +1,6 @@
 import { React } from "react";
 import footerLogo from "../resources/footer-logo.png";
-import "./Footer.css";
+import "./footer2.css";
 import InstagramLogo from "../resources/instagram.svg";
 import FacebookLogo from "../resources/facebook.svg";
 import UpArrowIcon from "../resources/up-arrow.svg";
