@@ -50,8 +50,11 @@ body {
 	text-decoration: none;
 }
 .login-button {
-	cursor: pointer;
 	margin-left: 55%;
+	display: flex;
+	width: max-content;
+	flex-direction: row;
+	white-space: nowrap;
 }
 .nav-buttons-container {
 	margin-left: 2%;
