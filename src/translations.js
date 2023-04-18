@@ -18,6 +18,16 @@ export const translationEn = {
 	howToOrderParagraph: "HOW TO ORDER",
 	privacyPolicyParagraph: "PRIVACY POLICY",
 	orderRegulationsParagraph: "ORDER REGULATIONS",
+	office: "Office",
+	contactUs: "Contact Us",
+	adress: "1AB, St. 3rd May, Warsaw, ",
+	country: "Poland",
+	callUs: "Call Us",
+	sendUs: "Send Us",
+	messageEncourage: "Drop Us A Line",
+	namePlaceholder: "Your Name",
+	mailPlaceholder: "Your E-mail",
+	submit: "SUBMIT",
 };
 export const translationDe = {
 	welcome: "Willkommen in unserem Restaurant!",
@@ -37,6 +47,16 @@ export const translationDe = {
 	howToOrderParagraph: "WIE BESTELLE ICH",
 	privacyPolicyParagraph: "DATENSCHUTZERKLÄRUNG",
 	orderRegulationsParagraph: "BESTELLVORSCHRIFTEN",
+	office: "Büro",
+	contactUs: "Kontaktiere uns",
+	adress: "3. Mai Straße 1AB, Warschau",
+	country: "Polen",
+	callUs: "Ruf uns an",
+	sendUs: "Sende uns",
+	messageEncourage: "Kontaktiere uns",
+	namePlaceholder: "Dein Name",
+	mailPlaceholder: "Deine E-Mail-Adresse",
+	submit: "SENDEN",
 };
 export const translationPl = {
 	welcome: "Witamy w naszej restauracji!",
@@ -56,6 +76,16 @@ export const translationPl = {
 	howToOrderParagraph: "JAK ZAMAWIAĆ",
 	privacyPolicyParagraph: "POLITYKA I PRYWATNOŚĆ",
 	orderRegulationsParagraph: "REGULAMIN ZAMÓWIEŃ",
+	office: "Biuro",
+	contactUs: "Kontakt",
+	adress: "ul. 3 Maja 1AB, Warszawa",
+	country: "Polska",
+	callUs: "Zadzwoń do nas",
+	sendUs: "Napisz do nas",
+	messageEncourage: "Napisz do nas",
+	namePlaceholder: "Twoje imię",
+	mailPlaceholder: "Twój adres e-mail",
+	submit: "WYŚLIJ",
 };
 i18n.init({
 	resources: {
