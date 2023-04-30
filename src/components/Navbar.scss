@@ -109,3 +109,105 @@ border: none;
 appearance: none;
 
 }
+
+@media only screen and (max-width: 1200px) {
+	.login-button {
+    margin-left: 45%;
+ 
+  }
+  .dropdown-button{
+    padding: 8px;
+  }
+}
+
+  @media (max-width: 1024px) {
+    .login-button {
+      margin-left: 40%;
+   
+    }
+    .dropdown-button{
+      padding: 8px;
+    }
+   
+  }
+
+  @media (max-width: 900px) {
+    .login-button {
+     margin-left: 35%;
+    }
+    .dropdown-button{
+      padding: 7px;
+    }
+   .Navbar *{
+    font-size: 14px;
+   }
+  }
+
+  @media (max-width: 768px) {
+    .login-button {
+      margin-left: 30%;
+      
+    }
+    .dropdown-button{
+      padding: 6px;
+    }
+   
+  }
+
+  @media (max-width: 600px) {
+    .login-button {
+      margin-left: 25%;
+      
+    }
+    .dropdown-button{
+      padding: 5px;
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+  }
+
+  @media (max-width: 600px) {
+    .login-button {
+      margin-left: 25%;
+      
+    }
+    .dropdown-button{
+      padding: 5px;
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+  }
+
+  @media (max-width: 480px) {
+    .login-button {
+      margin-left: 20%;
+      background: url(person-fill.svg) no-repeat center;
+      color: #99333300;
+
+    }
+
+    .dropdown-button{
+      padding: 2px;
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+  }
+
+  @media (max-width: 320px) {
+    .login-button {
+      margin-left: 10%;
+      background: url(person-fill.svg) no-repeat center;
+      color: #99333300;
+
+    }
+
+    .dropdown-button{
+      padding: 2px;
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+  }
