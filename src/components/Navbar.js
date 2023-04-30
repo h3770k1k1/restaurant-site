@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import mainLogo from "../resources/logo.png";
-import "../App.scss";
+import "./Navbar.scss";
 import dropDownArrow from "../resources/drop-down-arrow.svg";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";

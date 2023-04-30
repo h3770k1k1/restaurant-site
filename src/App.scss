@@ -103,17 +103,7 @@ body {
 	justify-content: center;
 	letter-spacing: 3px;
 }
-@media (max-width: 1000px) {
-	.title {
-	  font-size: 46px;
-	}
-  }
 
-  @media (max-width: 1000px) {
-	.greeting {
-	  font-size: 28px;
-	}
-  }
 .greeting {
 	font-weight: 600;
 	color: $color_1;
@@ -145,33 +135,10 @@ body {
 		backdrop-filter: none;
 	}
 }
-@media (max-width: 1000px) {
-	.order-button {
-	  font-size: 20px;
-	}
-  }
-@media (max-width: 768px) {
-	.order-button {
-	  font-size: 14px;
-	}
-  }
-  @media (max-width: 768px) {
-	.title {
-	  font-size: 36 px;
-	}
-  }
+
   
-  @media (max-width: 576px) {
-	.order-button {
-	  font-size: 12px;
-	  padding: 6px 12px;
-	}
-  }
-  @media (max-width: 576px) {
-	.title {
-	  font-size: 28px;
-	}
-  }
+  
+ 
 	
 	.language-option {
 	  padding: 10px;
