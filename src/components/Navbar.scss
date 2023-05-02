@@ -198,16 +198,18 @@ appearance: none;
 
   @media (max-width: 320px) {
     .login-button {
-      margin-left: 10%;
+      margin-left: 15%;
       background: url(person-fill.svg) no-repeat center;
       color: #99333300;
 
     }
 
     .dropdown-button{
-      padding: 2px;
+      padding: 1px;
     }
     .Navbar *{
       font-size: 12px;
      }
+     .language-option {
+      padding: 5px;}
   }
