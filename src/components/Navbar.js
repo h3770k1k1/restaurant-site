@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import mainLogo from "../resources/logo.png";
 import "./Navbar.scss";
-import dropDownArrow from "../resources/drop-down-arrow.svg";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import LanguageSelector from "./LanguageSelector.jsx";
 
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
@@ -20,7 +20,7 @@ const Navbar = () => {
 	return (
 		<div className="Navbar">
 			<div className="logo-container">
-				<img className="logo-img" src={mainLogo} alt="logo" />
+				<img className="logo-img" src={mainLogo} alt="Logo" />
 			</div>
 			<div className="nav-buttons-container">
 				<div className="nav-button">{t("menu")}</div>
@@ -30,42 +30,11 @@ const Navbar = () => {
 				</NavLink>
 			</div>
 			<div className="nav-button login-button">{t("signIn")}</div>
-			<div className="language-change-button">
-				<select
-					onfocus="this.size = 3;"
-					onblur="this.size=0;"
-					onchange="this.size=1;this.blur()"
-					className="dropdown-button"
-					onChange={handleChangeLanguage}
-					onClick={handleArrowClick}
-				>
-					<option
-						selected="selected"
-						value="en"
-						className="language-option choosen-language"
-					>
-						English
-					</option>
-					<option className="language-option" value="pl">
-						Polski
-					</option>
-					<option className="language-option" value="de">
-						Deutsch
-					</option>
-				</select>
-				<div className="dropdown-arrow">
-					<span
-						style={{
-							webkitTransform: isRotated
-								? "rotate(-180deg) translateZ(0)"
-								: "none",
-							transition: "0.4s ease",
-						}}
-					>
-						<img src={dropDownArrow}></img>
-					</span>
-				</div>
-			</div>
+			<LanguageSelector
+				isRotated={isRotated}
+				handleChangeLanguage={handleChangeLanguage}
+				handleArrowClick={handleArrowClick}
+			/>
 		</div>
 	);
 };

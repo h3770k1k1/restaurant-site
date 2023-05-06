@@ -17,6 +17,7 @@ font-weight: 300;
 .footer-logo-container{
     display: flex;
     height: 50%;
+    justify-content: center;
 }
 .sm-container{
 }
@@ -93,4 +94,41 @@ color: black;
     justify-content: center;
     align-items: center;
     margin-left: 94vw;
+}
+
+@media (max-width: 1200px) {
+    .bottom-button{
+        margin-top: 0vh;
+    }
+}
+
+@media (max-width: 1024px) {
+    .bottom-button{
+        margin-top: 17vh;
+    }
+    .footer-logo-img{
+        width: 75%;
+    }
+    .footer{
+    grid-column-gap: 5%;}
+}
+
+@media (max-width: 900px) {
+    .bottom-button{
+        margin-top: 17vh;
+
+    }
+    .footer-logo-img{
+        width: 75%;
+    }
+    .footer{
+    grid-column-gap: 3%;}
+
+    .scroll-up-button{
+    display: none;
+    }
+    .bottom-button{
+        width: 2.5em;
+        height: 2.5em;
+    }
 }

@@ -39,78 +39,7 @@
 	white-space: nowrap;
 }
 
-	
-.language-option {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 100%;
-     
-    &:hover {
-      color: #fff;
-      outline: none;
-    
-    &.choosen-language {
-      color: #fff;
-    }
-  }
-}
-
-.language-change-button {
-  display: flex;
-  flex-direction: row;
-  z-index: 8;
-  margin-right: 5em;
-
-  .dropdown-button {
-    border: none;
-    color: #ffffff;
-    background-color: black;
-    cursor: pointer;
-    font-size: inherit;
-    padding: 10px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    &:focus {
-      outline: none;
-      &::-moz-focus-inner {
-        border: 0;
-      }
-    }
-
-    & > option.choosen-language {
-      font-weight: bold;
-    }
-    & > option.language-option {
-      font-weight: normal;
-    }
-    &:focus {
-      color: #fff;
-      
-    }
-  }
-}
-
-.dropdown-arrow{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2em;
-  height: 2em;
-  z-index: 5;
-  margin-left: -1em;
-}
-
-select{
-border: none;
-appearance: none;
-
-}
-
-@media only screen and (max-width: 1200px) {
+@media (max-width: 1200px) {
 	.login-button {
     margin-left: 45%;
  
@@ -167,18 +96,7 @@ appearance: none;
      }
   }
 
-  @media (max-width: 600px) {
-    .login-button {
-      margin-left: 25%;
-      
-    }
-    .dropdown-button{
-      padding: 5px;
-    }
-    .Navbar *{
-      font-size: 12px;
-     }
-  }
+ 
 
   @media (max-width: 480px) {
     .login-button {
@@ -211,5 +129,6 @@ appearance: none;
       font-size: 12px;
      }
      .language-option {
-      padding: 5px;}
+      padding: 5px;
+      }
   }
