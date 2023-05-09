@@ -4,8 +4,8 @@ const LanguageSelector = ({handleChangeLanguage, handleArrowClick }) => {
   return (
     <div className="language-change-button">
       <select
-        onfocus="this.size = 3;"
-        onblur="this.size=0;"
+        onFocus="this.size = 3;"
+        onBlur="this.size=0;"
         onChange={handleChangeLanguage}
         onClick={handleArrowClick}
         className="dropdown-button"

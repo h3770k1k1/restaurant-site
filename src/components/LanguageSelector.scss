@@ -1,71 +1,79 @@
-
-	
-.language-option {
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    width: 100%;
-     
-    &:hover {
-      color: #fff;
-      outline: none;
-    
-    &.choosen-language {
-      color: #fff;
-    }
-  }
-}
+@import "https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap";
+$font-family_1: 'Inter Tight', sans-serif;
 
 .language-change-button {
-  display: flex;
-  flex-direction: row;
-  z-index: 8;
-  margin-right: 5em;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 
   .dropdown-button {
-    border: none;
-    color: #ffffff;
-    background-color: black;
-    cursor: pointer;
-    font-size: inherit;
-    padding: 10px;
     appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    &:focus {
-      outline: none;
-      &::-moz-focus-inner {
-        border: 0;
-      }
+    background-color: rgba(0, 0, 0, 0);
+    font-family: $font-family_1;
+    font-weight: 300;
+    padding: 0.2rem 1rem;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     }
 
-    & > option.choosen-language {
-      font-weight: bold;
-    }
-    & > option.language-option {
-      font-weight: normal;
-    }
     &:focus {
-      color: #fff;
-      
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .language-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+
+    &.open {
+      max-height: 300px;
+    }
+
+    .language-option {
+      display: block;
+      padding: 0.2rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      &.selected {
+        background-color: #f0f0f0;
+      }
     }
   }
 }
-
-.dropdown-arrow{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 2em;
-  height: 2em;
-  z-index: 5;
-  margin-left: -1em;
-}
-
 select{
-border: none;
-appearance: none;
-
+    cursor: pointer;
+    color: white;
 }
+select::first-letter {
+  color: red;
+}
+
+option{
+  background-color: black;
+  color: white;
+    cursor: pointer;
+    
+}
+@media (max-width: 600px) {select{font-size: 12px;}}
+@media (max-width: 900px) {select{font-size: 14px;}}
+@media (max-width: 1200px) {select{font-size: 16px;}}
+@media (min-width: 1200px) {select{font-size: 16px;}}

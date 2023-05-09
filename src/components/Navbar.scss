@@ -32,7 +32,7 @@
 }
 
 .login-button {
-	margin-left: 55%;
+	margin-left: 50%;
 	display: flex;
 	width: max-content;
 	flex-direction: row;
@@ -44,6 +44,7 @@
     margin-left: 45%;
  
   }
+  
   .dropdown-button{
     padding: 8px;
   }
@@ -54,6 +55,7 @@
       margin-left: 40%;
    
     }
+    
     .dropdown-button{
       padding: 8px;
     }
@@ -70,6 +72,7 @@
    .Navbar *{
     font-size: 14px;
    }
+  
   }
 
   @media (max-width: 768px) {
@@ -94,6 +97,7 @@
     .Navbar *{
       font-size: 12px;
      }
+     
   }
 
  
@@ -101,34 +105,19 @@
   @media (max-width: 480px) {
     .login-button {
       margin-left: 20%;
+      padding-right: 0;
       background: url(person-fill.svg) no-repeat center;
       color: #99333300;
 
     }
 
     .dropdown-button{
-      padding: 2px;
+      padding: 0px;
+      margin-left: -1em;
     }
     .Navbar *{
       font-size: 12px;
      }
   }
 
-  @media (max-width: 320px) {
-    .login-button {
-      margin-left: 15%;
-      background: url(person-fill.svg) no-repeat center;
-      color: #99333300;
-
-    }
-
-    .dropdown-button{
-      padding: 1px;
-    }
-    .Navbar *{
-      font-size: 12px;
-     }
-     .language-option {
-      padding: 5px;
-      }
-  }
+  

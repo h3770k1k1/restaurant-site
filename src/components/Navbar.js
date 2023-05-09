@@ -19,9 +19,11 @@ const Navbar = () => {
 
 	return (
 		<div className="Navbar">
-			<div className="logo-container">
-				<img className="logo-img" src={mainLogo} alt="Logo" />
-			</div>
+			<NavLink to="/">
+				<div className="logo-container">
+					<img className="logo-img" src={mainLogo} alt="Logo" />
+				</div>
+			</NavLink>
 			<div className="nav-buttons-container">
 				<div className="nav-button">{t("menu")}</div>
 				<div className="nav-button">{t("gallery")}</div>
