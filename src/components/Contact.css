@@ -4,7 +4,9 @@ body {
 	font-weight: 300;
 	overscroll-behavior: none;
 }
-
+Footer{
+    width: 100vw;
+}
 .main-container{
 padding: 0;
 margin: 0;
@@ -189,4 +191,14 @@ textarea{
     font-size: 14px;
     font-family: 'Inter Tight', sans-serif;
 }
+#map-ref{
+    width: 900px;
+    height: 800px;
+}
 
+@media (max-width: 1200px) {
+    #map-ref{
+        width: 700px;
+        height: 800px;
+    }
+}
