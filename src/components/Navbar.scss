@@ -1,12 +1,11 @@
 
 .Navbar {
 	background-color: black;
-	width: 100%;
+	width: 100vw;
 	height: 10vh;
 	margin: 0;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
     position: fixed;
 	z-index: 5;
 }
@@ -32,7 +31,6 @@
 }
 
 .login-button {
-	margin-left: 50%;
 	display: flex;
 	width: max-content;
 	flex-direction: row;
@@ -41,33 +39,28 @@
 
 @media (max-width: 1200px) {
 	.login-button {
-    margin-left: 45%;
  
   }
   
   .dropdown-button{
-    padding: 8px;
   }
 }
 
   @media (max-width: 1024px) {
     .login-button {
-      margin-left: 40%;
+      margin-left: 50%;
    
     }
     
     .dropdown-button{
-      padding: 8px;
     }
    
   }
 
   @media (max-width: 900px) {
     .login-button {
-     margin-left: 35%;
     }
     .dropdown-button{
-      padding: 7px;
     }
    .Navbar *{
     font-size: 14px;
@@ -77,22 +70,18 @@
 
   @media (max-width: 768px) {
     .login-button {
-      margin-left: 30%;
       
     }
     .dropdown-button{
-      padding: 6px;
     }
    
   }
 
   @media (max-width: 600px) {
     .login-button {
-      margin-left: 25%;
       
     }
     .dropdown-button{
-      padding: 5px;
     }
     .Navbar *{
       font-size: 12px;
@@ -104,7 +93,6 @@
 
   @media (max-width: 480px) {
     .login-button {
-      margin-left: 20%;
       padding-right: 0;
       background: url(person-fill.svg) no-repeat center;
       color: #99333300;

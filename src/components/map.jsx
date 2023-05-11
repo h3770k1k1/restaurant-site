@@ -23,7 +23,7 @@ function Contact() {
 
     if (distance > 10) {
       alert("Jesteś oddalony o ponad 10 km od naszej lokalizacji! Dowóz niemożliwy!");
-    }if (distance > 10) {
+    }if (distance < 10) {
       alert("Jesteś oddalony o mniej niż 10 km od naszej lokalizacji! Możemy dostarczyć Twoje zamówienie!");
     }
     
@@ -70,11 +70,11 @@ function Contact() {
           checkDistance(userLocation);
         },
         (error) => {
-          console.error("Błąd podczas pobierania lokalizacji użytkownika:", error);
+          console.log("Błąd podczas pobierania lokalizacji użytkownika:", error);
         }
       );
     } else {
-      console.error("Geolokalizacja nie jest obsługiwana przez przeglądarkę.");
+      console.log("Geolokalizacja nie jest obsługiwana przez przeglądarkę.");
     }
   }, []);
 
