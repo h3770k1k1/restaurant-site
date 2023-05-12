@@ -1,0 +1,111 @@
+
+.Navbar {
+	background-color: black;
+	width: 100vw;
+	height: 10vh;
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+    position: fixed;
+	z-index: 5;
+}
+
+.logo-container {
+	margin-left: 5%;
+}
+
+.nav-buttons-container {
+	margin-left: 2%;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 20%;
+	grid-row-gap: 0px;
+}
+
+.nav-button {
+	color: white;
+	cursor: pointer;
+	font-size: medium;
+	text-decoration: none;
+}
+
+.login-button {
+	display: flex;
+	width: max-content;
+	flex-direction: row;
+	white-space: nowrap;
+}
+
+@media (max-width: 1200px) {
+	.login-button {
+ 
+  }
+  
+  .dropdown-button{
+  }
+}
+
+  @media (max-width: 1024px) {
+    .login-button {
+      margin-left: 50%;
+   
+    }
+    
+    .dropdown-button{
+    }
+   
+  }
+
+  @media (max-width: 900px) {
+    .login-button {
+    }
+    .dropdown-button{
+    }
+   .Navbar *{
+    font-size: 14px;
+   }
+  
+  }
+
+  @media (max-width: 768px) {
+    .login-button {
+      
+    }
+    .dropdown-button{
+    }
+   
+  }
+
+  @media (max-width: 600px) {
+    .login-button {
+      
+    }
+    .dropdown-button{
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+     
+  }
+
+ 
+
+  @media (max-width: 480px) {
+    .login-button {
+      padding-right: 0;
+      background: url(person-fill.svg) no-repeat center;
+      color: #99333300;
+
+    }
+
+    .dropdown-button{
+      padding: 0px;
+      margin-left: -1em;
+    }
+    .Navbar *{
+      font-size: 12px;
+     }
+  }
+
+  
