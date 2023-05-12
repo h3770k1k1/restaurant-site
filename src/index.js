@@ -12,7 +12,7 @@ ReactDOM.render(
 		<Router>
 			<I18nextProvider i18n={i18n}>
 				<Routes>
-					<Route path="/" element={<App />} />
+					<Route path="/restaurant-site" element={<App />} />
 					<Route path="/contact" element={<Contact />} />
 				</Routes>
 			</I18nextProvider>
