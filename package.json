@@ -1,6 +1,6 @@
 {
 	"name": "my-app",
-	"homepage": ".",
+	"homepage": "http://h3770k1k1.github.io/restaurant-site",
 	"proxy": "http://localhost:3001",
 	"version": "0.1.0",
 	"private": true,
@@ -21,6 +21,8 @@
 	},
 	"scripts": {
 		"start": "react-scripts start",
+		"predeploy": "npm run build",
+		"deploy":"gh-pages -d build",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
@@ -44,6 +46,7 @@
 		]
 	},
 	"devDependencies": {
-		"@ubilabs/google-maps-react-hooks": "^2.0.2"
+		"@ubilabs/google-maps-react-hooks": "^2.0.2",
+		"gh-pages": "^5.0.0"
 	}
 }
