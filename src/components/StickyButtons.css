@@ -1,0 +1,51 @@
+#ButtonsContainer{
+    width: 90vw;
+    position: fixed;
+    height: 5em;
+    display: flex;
+    align-self: center;
+    margin-bottom: 10%;
+    justify-content: space-between;
+}
+
+.bottom-button{
+    background-color: white ;
+    width: 3em;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    
+}
+.shopping-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.non-visible{
+    display: none;
+}
+
+.scroll-up-button a{
+    text-decoration: none;
+    color: black;
+    
+    }
+
+    @media (max-width: 900px) {
+        .bottom-button{
+            margin-top: 17vh;
+            width: 2.5em;
+            height: 2.5em;}
+        .scroll-up-button{
+         display: none;
+        }
+    
+        }
+  @media (max-width: 1200px) {
+.bottom-button{
+margin-top: 0vh;
+            }
+        }

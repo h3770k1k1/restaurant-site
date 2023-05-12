@@ -64,48 +64,11 @@ font-size: 16px;
 .sm-icons-container *{
     cursor: pointer;
 }
-.bottom-button{
-    background-color: white ;
-    width: 3em;
-    height: 3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-    position: fixed;
-    margin-left: -94vw;
-    margin-top: -4vh;
-}
-.scroll-up-button a{
-text-decoration: none;
-color: black;
 
-}
-.scroll-up-button{
-    
-}
 
-.non-visible{
-    display: none;
-}
-
-.shopping-button{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 94vw;
-}
-
-@media (max-width: 1200px) {
-    .bottom-button{
-        margin-top: 0vh;
-    }
-}
 
 @media (max-width: 1024px) {
-    .bottom-button{
-        margin-top: 17vh;
-    }
+    
     .footer-logo-img{
         width: 100%;
     }
@@ -114,21 +77,12 @@ color: black;
 }
 
 @media (max-width: 900px) {
-    .bottom-button{
-        margin-top: 17vh;
-
-    }
+    
     .footer-logo-img{
         width: 75%;
     }
     .footer{
     grid-column-gap: 3%;}
 
-    .scroll-up-button{
-    display: none;
-    }
-    .bottom-button{
-        width: 2.5em;
-        height: 2.5em;
-    }
+    
 }

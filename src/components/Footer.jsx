@@ -7,6 +7,7 @@ import UpArrowIcon from "../resources/up-arrow.svg";
 import ShoppingCart from "../resources/shopping-cart.svg";
 import i18n from "i18next";
 import { initReactI18next, useTranslation } from "react-i18next";
+import Buttons from "./StickyButtons";
 
 const Footer = () => {
 	detectScrollUp();
@@ -48,17 +49,7 @@ const Footer = () => {
 				<p>{t("privacyPolicyParagraph")}</p>
 				<p>{t("orderRegulationsParagraph")}</p>
 			</div>
-			<div className="bottom-button shopping-button">
-				<img src={ShoppingCart} />
-			</div>
-			<div
-				className="bottom-button scroll-to-top-button  non-visible"
-				onClick="window.scroll(0,0);"
-			>
-				<a href="#top">
-					<img className="up-arrow-icon" src={UpArrowIcon} />
-				</a>
-			</div>
+			<Buttons/>
 		</div>
 	);
 };
