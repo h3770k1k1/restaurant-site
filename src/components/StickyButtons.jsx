@@ -1,4 +1,4 @@
-import { React } from "react";
+        import { React } from "react";
 import "./StickyButtons.css";
 import UpArrowIcon from "../resources/up-arrow.svg";
 import ShoppingCart from "../resources/shopping-cart.svg";

@@ -1,6 +1,6 @@
 {
 	"name": "my-app",
-	"homepage": ".",
+	"homepage": "https://h3770k1k1.github.io/restaurant-site",
 	"proxy": "http://localhost:3001",
 	"version": "0.1.0",
 	"private": true,
