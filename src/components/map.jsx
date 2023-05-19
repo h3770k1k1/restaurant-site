@@ -1,27 +1,35 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Contact.css";
-
-function Contact() {
+import userMarker from "../resources/marker.png"
+function Map() {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   const initMap = () => {
     const location = { lat: 52.2298, lng: 21.0118 };
+    const officeLocation = { lat: 52.2331, lng: 20.9911 }; 
+  
     const map = new window.google.maps.Map(mapRef.current, {
       zoom: 14,
       center: location,
     });
-
+  
     const marker = new window.google.maps.Marker({
       position: location,
       map: map,
-      draggable: true, // Umożliwia przeciąganie markera
+      draggable: true,
+      icon: userMarker,
     });
-
+  
+    const officeMarker = new window.google.maps.Marker({
+      position: officeLocation,
+      map: map,
+      draggable: false,
+    });
+  
     markerRef.current = marker;
-
-    // Dodawanie nasłuchiwacza na zdarzenie przeciągania markera
+  
     window.google.maps.event.addListener(marker, "dragend", () => {
       const newPosition = marker.getPosition();
       setSelectedLocation({
@@ -29,14 +37,12 @@ function Contact() {
         lng: newPosition.lng(),
       });
     });
+  
+    window.google.maps.event.addListener(officeMarker, "dragend", () => {
+      const newPosition = officeMarker.getPosition();
+    });
   };
-
-  const handleClearMarker = () => {
-    if (markerRef.current) {
-      markerRef.current.setMap(null); // Usunięcie markera z mapy
-      setSelectedLocation(null);
-    }
-  };
+  
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -55,11 +61,10 @@ function Contact() {
           <p>Zaznaczony punkt:</p>
           <p>Latitude: {selectedLocation.lat}</p>
           <p>Longitude: {selectedLocation.lng}</p>
-          <button onClick={handleClearMarker}>Usuń zaznaczony punkt</button>
         </div>
       )}
     </div>
   );
 }
 
-export default Contact;
+export default Map;
