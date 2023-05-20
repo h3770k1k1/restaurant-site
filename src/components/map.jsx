@@ -9,8 +9,25 @@ function Map() {
   const markerRef = useRef(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [distance, setDistance] = useState(null);
+  useEffect(() => {
+    const getLocation = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          console.log('Lokalizacja użytkownika:', position.coords.latitude, position.coords.longitude);
+        }, (error) => {
+          console.error('Błąd pobierania lokalizacji:', error);
+        });
+      } else {
+        console.error('Geolokalizacja nie jest obsługiwana przez przeglądarkę.');
+      }
+    };
+
+    getLocation();
+  }, []);
 
   const initMap = () => {
+
+  
     const location = { lat: 52.2298, lng: 21.0118 };
 
     const map = new window.google.maps.Map(mapRef.current, {
@@ -115,4 +132,3 @@ function Map() {
 }
 
 export default Map;
-
