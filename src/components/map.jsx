@@ -18,31 +18,47 @@ function Map() {
       center: location,
     });
 
-    const marker = new window.google.maps.Marker({
-      position: location,
-      map: map,
-      draggable: true,
-      icon: userMarker,
-    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const userLocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
 
-    const officeMarker = new window.google.maps.Marker({
-      position: officeLocation,
-      map: map,
-      draggable: false,
-    });
+          const marker = new window.google.maps.Marker({
+            position: userLocation,
+            map: map,
+            draggable: true,
+            icon: userMarker,
+          });
 
-    markerRef.current = marker;
+          const officeMarker = new window.google.maps.Marker({
+            position: officeLocation,
+            map: map,
+            draggable: false,
+          });
 
-    window.google.maps.event.addListener(marker, "dragend", () => {
-      const newPosition = marker.getPosition();
-      setSelectedLocation({
-        lat: newPosition.lat(),
-        lng: newPosition.lng(),
-      });
+          markerRef.current = marker;
 
-      const dist = calculateDistance(newPosition, officeLocation);
-      setDistance(dist);
-    });
+          window.google.maps.event.addListener(marker, "dragend", () => {
+            const newPosition = marker.getPosition();
+            setSelectedLocation({
+              lat: newPosition.lat(),
+              lng: newPosition.lng(),
+            });
+
+            const dist = calculateDistance(newPosition, officeLocation);
+            setDistance(dist);
+          });
+        },
+        (error) => {
+          console.log("Błąd uzyskiwania lokalizacji:", error);
+        }
+      );
+    } else {
+      console.log("Twoja przeglądarka nie obsługuje geolokalizacji.");
+    }
   };
 
   const calculateDistance = (point1, point2) => {
@@ -99,3 +115,4 @@ function Map() {
 }
 
 export default Map;
+
