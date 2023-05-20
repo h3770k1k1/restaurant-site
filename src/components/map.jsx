@@ -9,25 +9,36 @@ function Map() {
   const markerRef = useRef(null);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [distance, setDistance] = useState(null);
+
   useEffect(() => {
     const getLocation = () => {
       if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((position) => {
-          console.log('Lokalizacja użytkownika:', position.coords.latitude, position.coords.longitude);
-        }, (error) => {
-          console.error('Błąd pobierania lokalizacji:', error);
-        });
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            console.log(
+              "User location:",
+              position.coords.latitude,
+              position.coords.longitude
+            );
+            const userLocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+            initMap(userLocation);
+          },
+          (error) => {
+            console.error("Error retrieving location:", error);
+          }
+        );
       } else {
-        console.error('Geolokalizacja nie jest obsługiwana przez przeglądarkę.');
+        console.error("Geolocation is not supported by the browser.");
       }
     };
 
     getLocation();
   }, []);
 
-  const initMap = () => {
-
-  
+  const initMap = (userLocation) => {
     const location = { lat: 52.2298, lng: 21.0118 };
 
     const map = new window.google.maps.Map(mapRef.current, {
@@ -35,47 +46,31 @@ function Map() {
       center: location,
     });
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const userLocation = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
+    const marker = new window.google.maps.Marker({
+      position: userLocation,
+      map: map,
+      draggable: true,
+      icon: userMarker,
+    });
 
-          const marker = new window.google.maps.Marker({
-            position: userLocation,
-            map: map,
-            draggable: true,
-            icon: userMarker,
-          });
+    const officeMarker = new window.google.maps.Marker({
+      position: officeLocation,
+      map: map,
+      draggable: false,
+    });
 
-          const officeMarker = new window.google.maps.Marker({
-            position: officeLocation,
-            map: map,
-            draggable: false,
-          });
+    markerRef.current = marker;
 
-          markerRef.current = marker;
+    window.google.maps.event.addListener(marker, "dragend", () => {
+      const newPosition = marker.getPosition();
+      setSelectedLocation({
+        lat: newPosition.lat(),
+        lng: newPosition.lng(),
+      });
 
-          window.google.maps.event.addListener(marker, "dragend", () => {
-            const newPosition = marker.getPosition();
-            setSelectedLocation({
-              lat: newPosition.lat(),
-              lng: newPosition.lng(),
-            });
-
-            const dist = calculateDistance(newPosition, officeLocation);
-            setDistance(dist);
-          });
-        },
-        (error) => {
-          console.log("Błąd uzyskiwania lokalizacji:", error);
-        }
-      );
-    } else {
-      console.log("Twoja przeglądarka nie obsługuje geolokalizacji.");
-    }
+      const dist = calculateDistance(newPosition, officeLocation);
+      setDistance(dist);
+    });
   };
 
   const calculateDistance = (point1, point2) => {
@@ -84,7 +79,7 @@ function Map() {
     const lat2 = point2.lat;
     const lon2 = point2.lng;
 
-    const R = 6371; // promień Ziemi w kilometrach
+    const R = 6371; // Earth's radius in kilometers
     const dLat = toRad(lat2 - lat1);
     const dLon = toRad(lon2 - lon1);
     const a =
@@ -102,6 +97,7 @@ function Map() {
   const toRad = (value) => {
     return (value * Math.PI) / 180;
   };
+
 
   useEffect(() => {
     const script = document.createElement("script");
