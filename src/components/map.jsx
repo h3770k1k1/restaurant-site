@@ -70,6 +70,14 @@ function Map() {
 
       const dist = calculateDistance(newPosition, officeLocation);
       setDistance(dist);
+      // Log the values to the console
+      console.log("Selected Location:");
+      console.log("Latitude:", newPosition.lat());
+      console.log("Longitude:", newPosition.lng());
+      console.log("Office Location:");
+      console.log("Latitude:", officeLocation.lat);
+      console.log("Longitude:", officeLocation.lng);
+      
     });
   };
 
@@ -90,8 +98,11 @@ function Map() {
         Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-
+    if (distance > 10) {
+      window.alert("Jesteś od nas dalej niż 10 km! Dowóz niemożliwy");
+    }
     return distance;
+    
   };
 
   const toRad = (value) => {
@@ -107,7 +118,7 @@ function Map() {
     window.initMap = initMap;
     document.body.appendChild(script);
   }, []);
-
+  console.log("Distance:", distance);
   return (
     <div>
       <div id="map-ref" ref={mapRef}></div>
