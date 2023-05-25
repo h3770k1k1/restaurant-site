@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Contact.css";
 import userMarker from "../resources/marker.png";
+import { API_KEY } from "../key";
+
 
 const officeLocation = { lat: 52.2331, lng: 20.9911 };
 
@@ -101,6 +103,9 @@ function Map() {
     if (distance > 10) {
       window.alert("Jesteś od nas dalej niż 10 km! Dowóz niemożliwy");
     }
+    if (distance < 10) {
+      window.alert("Jesteś od nas dalej niż 10 km! Dowóz możliwy");
+    }
     return distance;
     
   };
@@ -112,8 +117,7 @@ function Map() {
 
   useEffect(() => {
     const script = document.createElement("script");
-    const API_KEY = "key.js";
-    script.src = `https://maps.googleapis.com/maps/api/js?key=&{API_KEY}&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
     script.async = true;
     window.initMap = initMap;
     document.body.appendChild(script);
@@ -122,18 +126,7 @@ function Map() {
   return (
     <div>
       <div id="map-ref" ref={mapRef}></div>
-      {selectedLocation && (
-        <div>
-          <p>ludzik:</p>
-          <p>Latitude: {selectedLocation.lat}</p>
-          <p>Longitude: {selectedLocation.lng}</p>
-          <p>biuro:</p>
-          <p>Latitude: {officeLocation.lat}</p>
-          <p>Longitude: {officeLocation.lng}</p>
-          <p>Różnica:</p>
-          <p>{distance && `${distance.toFixed(2)} km`}</p>
-        </div>
-      )}
+    
     </div>
   );
 }
