@@ -3,7 +3,6 @@ import "./Contact.css";
 import userMarker from "../resources/marker.png";
 import { API_KEY } from "../key";
 
-
 const officeLocation = { lat: 52.2331, lng: 20.9911 };
 
 function Map() {
@@ -38,6 +37,7 @@ function Map() {
     };
 
     getLocation();
+    logLocations();
   }, []);
 
   const initMap = (userLocation) => {
@@ -51,7 +51,7 @@ function Map() {
     const marker = new window.google.maps.Marker({
       position: userLocation,
       map: map,
-      draggable: true,
+      draggable: false,
       icon: userMarker,
     });
 
@@ -62,25 +62,8 @@ function Map() {
     });
 
     markerRef.current = marker;
-
-    window.google.maps.event.addListener(marker, "dragend", () => {
-      const newPosition = marker.getPosition();
-      setSelectedLocation({
-        lat: newPosition.lat(),
-        lng: newPosition.lng(),
-      });
-
-      const dist = calculateDistance(newPosition, officeLocation);
-      setDistance(dist);
-      // Log the values to the console
-      console.log("Selected Location:");
-      console.log("Latitude:", newPosition.lat());
-      console.log("Longitude:", newPosition.lng());
-      console.log("Office Location:");
-      console.log("Latitude:", officeLocation.lat);
-      console.log("Longitude:", officeLocation.lng);
-      
-    });
+    logLocations();
+    calculateDistance(marker.getPosition(), officeLocation);
   };
 
   const calculateDistance = (point1, point2) => {
@@ -100,33 +83,52 @@ function Map() {
         Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c;
-    if (distance > 10) {
-      window.alert("Jesteś od nas dalej niż 10 km! Dowóz niemożliwy");
-    }
-    if (distance < 10) {
-      window.alert("Jesteś od nas dalej niż 10 km! Dowóz możliwy");
-    }
-    return distance;
-    
+
+    setDistance(distance);
+    checkDistance(distance);
   };
 
   const toRad = (value) => {
     return (value * Math.PI) / 180;
   };
 
+  const checkDistance = (distance) => {
+    if (distance > 10) {
+      window.alert("Jesteś od nas dalej niż 10 km! Dowóz niemożliwy");
+    } else if (distance < 10) {
+      window.alert("Jesteś bliżej niż 10 km! Dowóz możliwy");
+    }
+  };
+
+  const logLocations = () => {
+    if (markerRef.current) {
+      console.log("Selected");
+      console.log("Selected Location:");
+      console.log("Latitude:", markerRef.current.getPosition().lat());
+      console.log("Longitude:", markerRef.current.getPosition().lng());
+    }
+    console.log("Office Location:");
+    console.log("Latitude:", officeLocation.lat);
+    console.log("Longitude:", officeLocation.lng);
+  };
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&callback=initMap`;
     script.async = true;
+    script.defer = true;
     window.initMap = initMap;
     document.body.appendChild(script);
+
+    return () => {
+      // Clean up the script tag when the component is unmounted
+      document.body.removeChild(script);
+    };
   }, []);
-  console.log("Distance:", distance);
+
   return (
     <div>
       <div id="map-ref" ref={mapRef}></div>
-    
     </div>
   );
 }
